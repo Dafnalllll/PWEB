@@ -1,5 +1,7 @@
-import React, {useEffect} from 'react'
-import Sidebar from '../components/sidebar/sidebar'
+import React, { useEffect } from "react";
+import Sidebar from "../components/sidebar/sidebar";
+import ManageTable from "../components/grid/manage/managetable";
+import ManageGrid from "../components/grid/manage/managegrid";
 export const Manage = () => {
   useEffect(() => {
     document.title = "Manage || InventoShoot";
@@ -8,12 +10,10 @@ export const Manage = () => {
     <div className="min-h-screen flex">
       <Sidebar />
       <div className="flex-1 p-6">
-        <h1 className="text-2xl font-bold">Manage Page</h1>
-        <p className="mt-4">
-          Ini adalah halaman manajemen. Gunakan navigasi untuk pindah ke halaman
-          lain.
-        </p>
-        {/* Tambahkan konten lain di sini */}
+        <div className="mt-6">
+          <div className="mb-4"></div>
+          <ManageGrid />
+        </div>
       </div>
     </div>
   );

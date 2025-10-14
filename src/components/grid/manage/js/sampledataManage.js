@@ -1,0 +1,42 @@
+export const sampleUsers = [
+  {
+    id: 1,
+    nama: "Dafa Pratama",
+    username: "dafa",
+    email: "dafa@example.com",
+    role: "Admin",
+    aktif: true,
+  },
+  {
+    id: 2,
+    nama: "Rina Sari",
+    username: "rina",
+    email: "rina@example.com",
+    role: "User",
+    aktif: true,
+  },
+  {
+    id: 3,
+    nama: "Budi Santoso",
+    username: "budi",
+    email: "budi@example.com",
+    role: "User",
+    aktif: false,
+  },
+  {
+    id: 4,
+    nama: "Siti Aminah",
+    username: "siti",
+    email: "siti@example.com",
+    role: "Admin",
+    aktif: true,
+  },
+  {
+    id: 5,
+    nama: "Andi Wijaya",
+    username: "andi",
+    email: "andi@example.com",
+    role: "User",
+    aktif: false,
+  },
+];
