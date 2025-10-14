@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sidebar from "../components/sidebar/sidebar";
 import DashboardGrid from "../components/grid/dashboard/dashboardgrid";
 export const Dashboard = () => {
+  useEffect(() => {
+    document.title = "InventoShoot";
+  }, []); 
   return (
     <div className="min-h-screen flex">
       <Sidebar />
