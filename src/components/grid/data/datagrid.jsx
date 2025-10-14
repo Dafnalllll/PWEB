@@ -17,6 +17,38 @@ function buildCategoryMap(categories = []) {
   return map;
 }
 
+/* Header & Search */
+export function DataHeader({ q, setQ }) {
+  return (
+    <header className="p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div>
+        <h1 className="text-2xl font-semibold text-slate-900">Data Barang</h1>
+        <p className="text-sm text-slate-500 mt-1">
+          Kelola daftar barang dan kategori inventaris Anda
+        </p>
+      </div>
+      <div className="w-full sm:w-auto flex items-center gap-3">
+        <div className="flex items-center gap-2 w-full sm:w-96">
+          <input
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder="Cari nama / kode / kategori / lokasi..."
+            className="w-full px-3 py-2 border rounded-lg text-sm  focus:outline-none bg-white/80"
+            aria-label="Cari data"
+          />
+          <button
+            onClick={() => setQ("")}
+            className="hidden sm:inline-flex px-3 py-2 bg-white/70 border rounded-lg text-sm text-slate-700 hover:shadow-sm transition"
+            title="Reset"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+}
+
 /* Items grid (tabel daftar barang) */
 export function ItemsGrid({ items = sampleItems }) {
   const categoryMap = buildCategoryMap(sampleCategories);

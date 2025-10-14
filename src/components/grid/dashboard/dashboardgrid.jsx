@@ -56,6 +56,13 @@ export default function DashboardGrid({
                 placeholder="Cari nama / kode / peminjam..."
                 className="w-full sm:w-72 px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-sky-300 focus:outline-none bg-white/70"
               />
+              <button
+                onClick={() => setQ("")}
+                className="hidden sm:inline-flex px-3 py-2 bg-white/70 border rounded-lg text-sm text-slate-700 hover:shadow-sm transition"
+                title="Reset"
+              >
+                Reset
+              </button>
             </div>
           </div>
         </div>
