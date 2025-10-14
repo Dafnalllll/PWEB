@@ -34,7 +34,7 @@ export default function Sidebar({ items = null }) {
 
   return (
     <aside
-      className="flex flex-col h-screen w-64 p-3 backdrop-blur-md bg-white/20 border-r border-white/30 shadow-lg rounded-r-xl"
+      className="flex flex-col h-auto w-64 p-3 backdrop-blur-md bg-white/20 border-r border-white/30 shadow-lg rounded-r-xl"
       aria-label="Sidebar utama"
       style={{ boxShadow: "0 8px 30px rgba(2,6,23,0.18)" }}
     >

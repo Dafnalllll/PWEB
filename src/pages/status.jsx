@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Sidebar from "../components/sidebar/sidebar";
 export const Status = () => {
+  useEffect(() => {
+    document.title = "Status || InventoShoot";
+  }, []);
   return (
     <div className="min-h-screen flex">
       <Sidebar />

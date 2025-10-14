@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Sidebar from "../components/sidebar/sidebar";
 
 export const Report = () => {
+  useEffect(() => {
+    document.title = "Report || InventoShoot";
+  }, []);
   return (
     <div className="min-h-screen flex">
       <Sidebar />
