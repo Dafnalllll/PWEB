@@ -5,7 +5,7 @@ import StatusTable from "./statustable";
 // Komponen Caption/Header
 const StatusCaption = () => (
   <div className="mt-8 mr-4">
-    <h2 className="text-2xl font-semibold text-slate-900">Status Peminjaman</h2>
+    <h2 className="text-2xl font-semibold text-slate-900">Status</h2>
     <p className="text-sm text-slate-500 mt-1">
       Daftar status dan tempo peminjaman barang.
     </p>

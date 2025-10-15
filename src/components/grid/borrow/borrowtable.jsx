@@ -11,7 +11,7 @@ const BorrowTable = ({ data }) => {
     <div className="w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden ml-[2rem] mt-[2rem]">
       <table className="w-full border-collapse">
         <thead>
-          <tr className="bg-slate-50">
+          <tr className="bg-slate-100">
             <th className="py-4 px-3 text-left font-bold text-slate-800">NO</th>
             <th className="py-4 px-3 text-left font-bold text-slate-800">
               BARANG
@@ -37,7 +37,7 @@ const BorrowTable = ({ data }) => {
           {data.map((item) => (
             <tr
               key={item.nomor}
-              className="border-b last:border-b-0 border-slate-100"
+              className="bg-white hover:bg-slate-50 transition border-b last:border-b-0 border-slate-100"
             >
               <td className="py-3 px-3 text-slate-700">{item.nomor}</td>
               <td className="py-3 px-3 text-slate-700">{item.barang}</td>
@@ -56,7 +56,7 @@ const BorrowTable = ({ data }) => {
               <td className="py-3 px-3 text-slate-700 ">{item.stok}</td>
               <td className="py-3 px-3 text-start">
                 {item.stok > 0 ? (
-                  <button className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                  <button className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm hover:shadow-md transition-all hover:scale-105 cursor-pointer">
                     Pinjam
                   </button>
                 ) : (

@@ -25,7 +25,7 @@ const CategoryTable = ({ categories }) => {
             categories.map((cat, idx) => (
               <tr
                 key={cat.kode || idx}
-                className="hover:bg-blue-50 transition-colors"
+                className="bg-white hover:bg-slate-50 transition border-b last:border-b-0 border-slate-100"
               >
                 <td className="px-6 py-4 text-sm text-slate-700 font-semibold">
                   {idx + 1}

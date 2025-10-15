@@ -11,7 +11,7 @@ export default function ReportTable({ data }) {
     <div className="w-full max-w-6xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden mt-4">
       <table className="w-full border-collapse">
         <thead>
-          <tr className="bg-slate-50">
+          <tr className="bg-slate-50 hover:bg-slate-50 transition">
             <th className="py-4 px-3 text-left font-bold text-slate-800">NO</th>
             <th className="py-4 px-3 text-left font-bold text-slate-800">
               NAMA BARANG
@@ -34,7 +34,7 @@ export default function ReportTable({ data }) {
           {data.map((item) => (
             <tr
               key={item.nomor}
-              className="border-b last:border-b-0 border-slate-100"
+              className="bg-white hover:bg-slate-50 transition border-b last:border-b-0 border-slate-100"
             >
               <td className="py-3 px-3 text-slate-700">{item.nomor}</td>
               <td className="py-3 px-3 text-slate-700">{item.namaBarang}</td>

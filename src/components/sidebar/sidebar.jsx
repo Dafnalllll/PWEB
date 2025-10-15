@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   DashboardIcon,
   DataIcon,
@@ -12,6 +12,7 @@ import {
 } from "../icon/sidebaricon";
 import InventoShoot from "../../assets/inventoshoot.webp";
 export default function Sidebar({ items = null }) {
+  const navigate = useNavigate();
   const [active, setActive] = useState("dashboard");
   const location = useLocation();
 
@@ -126,6 +127,7 @@ export default function Sidebar({ items = null }) {
               aria-label="Logout"
               title="Logout"
               className="items-center gap-2 px-3 py-1 rounded-md  border border-gray/100 text-sm text-slate-800 hover:bg-black/20 focus:outline-none cursor-pointer transition-all duration-150 flex hover:scale-105"
+              onClick={() => navigate("/login")}
             >
               Logout
             </button>

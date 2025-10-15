@@ -4,8 +4,8 @@ export const sampleStatus = [
     namaBarang: "Laptop Lenovo ThinkPad",
     tanggalMinjam: "2025-10-01",
     jatuhTempo: "2025-10-05",
-    status: "Terlambat",
-    warnaStatus: "red",
+    status: "Dipinjam",
+    warnaStatus: "blue",
     keterangan: "1 hari lagi jatuh tempo",
   },
   {

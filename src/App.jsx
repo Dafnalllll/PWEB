@@ -10,6 +10,8 @@ import Category from "./pages/category";
 import Borrow from "./pages/borrow";
 import Return from "./pages/return";
 import Manage from "./pages/manage";
+import Login from "./pages/auth/login";
+import SignUp from "./pages/auth/signup";
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +25,10 @@ function App() {
         <Route path="/return" element={<Return />} />
         <Route path="/manage" element={<Manage />} />
         <Route path="*" element={<NotFound />} />
+
+        {/* Auth routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );

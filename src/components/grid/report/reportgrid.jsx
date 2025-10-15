@@ -53,7 +53,6 @@ export const ReportGrid = () => {
         <ReportCaption />
         <ReportFilter q={q} setQ={setQ} />
       </div>
-
       {/* Table */}
       <ReportTable data={filteredReports} />
     </div>

@@ -1,32 +1,26 @@
 import React from "react";
 
-const statusColor = {
-  green: "bg-green-100 text-green-700",
-  blue: "bg-blue-100 text-blue-700",
-  red: "bg-red-100 text-red-700",
-};
-
-const StatusTable = ({ data }) => {
+const ReturnTable = ({ data }) => {
   return (
-    <div className="w-full max-w-6xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden mt-8">
+    <div className="w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden mt-[5rem] ml-[5rem]">
       <table className="w-full border-collapse">
         <thead>
-          <tr className="bg-slate-100">
-            <th className="py-4 px-3 text-left font-bold text-slate-800">NO</th>
+          <tr className="bg-slate-50">
+            <th className="py-4 px-3 text-left font-bold text-slate-800">No</th>
             <th className="py-4 px-3 text-left font-bold text-slate-800">
-              NAMA BARANG
+              Nama Barang
             </th>
             <th className="py-4 px-3 text-left font-bold text-slate-800">
-              TGL PINJAM
+              Tanggal Pinjam
             </th>
             <th className="py-4 px-3 text-left font-bold text-slate-800">
-              JATUH TEMPO
+              Tanggal Kembali
             </th>
             <th className="py-4 px-3 text-left font-bold text-slate-800">
-              STATUS
+              Kondisi 
             </th>
             <th className="py-4 px-3 text-left font-bold text-slate-800">
-              KETERANGAN
+              Aksi
             </th>
           </tr>
         </thead>
@@ -37,20 +31,15 @@ const StatusTable = ({ data }) => {
               className="bg-white hover:bg-slate-50 transition border-b last:border-b-0 border-slate-100"
             >
               <td className="py-3 px-3 text-slate-700">{item.nomor}</td>
-              <td className="py-3 px-3 text-slate-700">{item.namaBarang}</td>
+              <td className="py-3 px-3 text-slate-700">{item.barang}</td>
               <td className="py-3 px-3 text-slate-700">{item.tanggalMinjam}</td>
-              <td className="py-3 px-3 text-slate-700">{item.jatuhTempo}</td>
+              <td className="py-3 px-3 text-slate-700">{item.tanggalKembali}</td>
+              <td className="py-3 px-3 text-slate-700">{item.kondisi}</td>
               <td className="py-3 px-3">
-                <span
-                  className={`inline-block px-4 py-1 rounded-full font-semibold text-sm ${
-                    statusColor[item.warnaStatus] ||
-                    "bg-slate-100 text-slate-700"
-                  }`}
-                >
-                  {item.status}
-                </span>
+                <button className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">
+                  Kembalikan
+                </button>
               </td>
-              <td className="py-3 px-3 text-slate-700">{item.keterangan}</td>
             </tr>
           ))}
         </tbody>
@@ -59,4 +48,4 @@ const StatusTable = ({ data }) => {
   );
 };
 
-export default StatusTable;
+export default ReturnTable;
