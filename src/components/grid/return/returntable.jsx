@@ -2,7 +2,7 @@ import React from "react";
 
 const ReturnTable = ({ data }) => {
   return (
-    <div className="w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden mt-[5rem] ml-[5rem]">
+    <div className="w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden mt-[2rem] ml-[5rem]">
       <table className="w-full border-collapse">
         <thead>
           <tr className="bg-slate-50">
