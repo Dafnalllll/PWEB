@@ -1,20 +1,21 @@
-import React, {useEffect} from 'react'
-import Sidebar from '../components/sidebar/sidebar'
+import React, { useEffect } from "react";
+import Sidebar from "../components/sidebar/sidebar";
+import BorrowGrid from "../components/grid/borrow/borrowgrid";
 export const Borrow = () => {
-   useEffect(() => {
-     document.title = "Borrow || InventoShoot";
-   }, []);
+  useEffect(() => {
+    document.title = "Borrow || InventoShoot";
+  }, []);
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex bg-slate-50">
       <Sidebar />
-      <div className="flex-1 p-6">
-        <h1 className="text-2xl font-bold">Borrow Page</h1>
-        <p className="mt-4">
-          Ini adalah halaman peminjaman. Gunakan navigasi untuk pindah ke halaman
-          lain.
-        </p>
-        {/* Tambahkan konten lain di sini */}
-      </div>
+
+      <main className="flex-1 p-6 lg:p-10">
+        <div className="max-w-7xl mx-auto space-y-6">
+          <section>
+            <BorrowGrid />
+          </section>
+        </div>
+      </main>
     </div>
   );
 };

@@ -1,0 +1,56 @@
+import React, { useState, useMemo } from "react";
+import BorrowTable from "./borrowtable";
+import { sampleBorrow } from "./js/sampledataBorrow";
+export const BorrowCaption = () => (
+  <div className="mb-[2rem] ">
+    <h1 className="text-2xl font-semibold text-slate-900">Borrow</h1>
+    <p className="text-sm text-slate-500 mt-1 ">
+      Data barang dan status peminjaman.
+    </p>
+  </div>
+);
+
+export const BorrowFilter = ({ q, setQ }) => (
+  <div className="flex items-center gap-2 w-full sm:w-auto mb-6">
+    <input
+      type="text"
+      placeholder="Cari Barang / Kategori..."
+      value={q}
+      onChange={(e) => setQ(e.target.value)}
+      className="border border-slate-300 rounded-md py-2 px-3 focus:outline-none focus:ring-blue-500"
+    />
+    <button
+      onClick={() => setQ("")}
+      className="px-4 py-2 bg-white/70 border rounded-lg text-sm text-slate-700 hover:shadow-sm transition-all hover:scale-105 cursor-pointer"
+    >
+      Reset
+    </button>
+  </div>
+);
+
+export const BorrowGrid = () => {
+  const [q, setQ] = useState("");
+
+  const filteredBorrow = useMemo(() => {
+    return sampleBorrow.filter(
+      (item) =>
+        item.barang.toLowerCase().includes(q.toLowerCase()) ||
+        item.kategori.toLowerCase().includes(q.toLowerCase())
+    );
+  }, [q]);
+
+  return (
+    <div className="max-w-6xl mx-auto px-6 py-8">
+      {/* Caption di kiri, filter di kanan */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+        <BorrowCaption />
+        <BorrowFilter q={q} setQ={setQ} />
+      </div>
+
+      {/* Table */}
+      <BorrowTable data={filteredBorrow} />
+    </div>
+  );
+};
+
+export default BorrowGrid;
