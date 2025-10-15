@@ -54,11 +54,11 @@ export default function DashboardGrid({
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder="Cari nama / kode / peminjam..."
-                className="w-full sm:w-72 px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-sky-300 focus:outline-none bg-white/70"
+                className="w-full sm:w-72 px-3 py-2 border rounded-lg text-sm  focus:outline-none bg-white/70"
               />
               <button
                 onClick={() => setQ("")}
-                className="hidden sm:inline-flex px-3 py-2 bg-white/70 border rounded-lg text-sm text-slate-700 hover:shadow-sm transition"
+                className="hidden sm:inline-flex px-3 py-2 bg-white/70 border rounded-lg text-sm text-slate-700 hover:shadow-sm transition cursor-pointer hover:scale-105"
                 title="Reset"
               >
                 Reset

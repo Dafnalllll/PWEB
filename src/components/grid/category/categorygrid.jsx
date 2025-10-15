@@ -19,11 +19,9 @@ const CategoryGrid = () => {
     <>
       <div className="p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
         <div>
-          <h1 className="text-2xl font-semibold text-slate-900">
-            Data Kategori
-          </h1>
+          <h1 className="text-2xl font-semibold text-slate-900">Kategori</h1>
           <p className="text-sm text-slate-500 mt-1">
-            Kelola daftar kategori inventaris Anda
+            Kelola kategori inventaris Anda
           </p>
         </div>
         <div className="w-full sm:w-auto flex items-center gap-2 sm:gap-3">
@@ -36,7 +34,7 @@ const CategoryGrid = () => {
           />
           <button
             onClick={() => setQ("")}
-            className="px-3 py-2 bg-white/70 border rounded-lg text-sm text-slate-700 hover:shadow-sm transition"
+            className="px-3 py-2 bg-white/70 border rounded-lg text-sm text-slate-700 hover:shadow-sm transition-all hover:scale-105 cursor-pointer"
             title="Reset"
           >
             Reset

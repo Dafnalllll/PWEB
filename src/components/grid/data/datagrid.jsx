@@ -38,7 +38,7 @@ export function DataHeader({ q, setQ }) {
           />
           <button
             onClick={() => setQ("")}
-            className="hidden sm:inline-flex px-3 py-2 bg-white/70 border rounded-lg text-sm text-slate-700 hover:shadow-sm transition"
+            className="hidden sm:inline-flex px-3 py-2 bg-white/70 border rounded-lg text-sm text-slate-700 hover:shadow-sm transition-all hover:scale-105 cursor-pointer"
             title="Reset"
           >
             Reset

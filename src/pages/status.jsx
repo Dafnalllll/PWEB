@@ -1,5 +1,6 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import Sidebar from "../components/sidebar/sidebar";
+import StatusGrid from "../components/grid/status/statusgrid";
 export const Status = () => {
   useEffect(() => {
     document.title = "Status || InventoShoot";
@@ -7,14 +8,7 @@ export const Status = () => {
   return (
     <div className="min-h-screen flex">
       <Sidebar />
-      <div className="flex-1 p-6">
-        <h1 className="text-2xl font-bold">Status Page</h1>
-        <p className="mt-4">
-          Ini adalah halaman status. Gunakan navigasi untuk pindah ke halaman
-          lain.
-        </p>
-        {/* Tambahkan konten lain di sini */}
-      </div>
+      <StatusGrid />
     </div>
   );
 };
