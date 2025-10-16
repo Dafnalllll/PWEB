@@ -23,13 +23,13 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center">
       {/* AOS wrapper */}
       <div data-aos="zoom-in" data-aos-duration="800">
-        <div className="w-[500px] max-w-md p-8 rounded-2xl shadow-xl bg-white/30 backdrop-blur-lg border border-white/30">
+        <div className="w-[500px] max-w-md p-12 rounded-2xl shadow-xl bg-white/30 backdrop-blur-lg border border-white/30">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">
             Login
           </h2>
           <form onSubmit={handleLogin} className="space-y-5">
             <div>
-              <label className="block text-slate-700 mb-2" htmlFor="username">
+              <label className="block text-slate-400 mb-2" htmlFor="username">
                 Username
               </label>
               <input
@@ -44,7 +44,7 @@ const Login = () => {
               />
             </div>
             <div className="relative">
-              <label className="block text-slate-700 mb-2" htmlFor="password">
+              <label className="block text-slate-400 mb-2" htmlFor="password">
                 Password
               </label>
               <input
@@ -80,10 +80,19 @@ const Login = () => {
               <button
                 type="button"
                 onClick={handleReset}
-                className="flex-1 px-4 py-2 bg-white/70 border border-slate-300 rounded-lg text-slate-700 hover:shadow transition-all hover:scale-105 cursor-pointer"
+                className="flex-1 px-4 py-2 bg-white/70 border border-slate-400 rounded-lg text-slate-700 hover:shadow transition-all hover:scale-105 cursor-pointer"
               >
                 Reset
               </button>
+            </div>
+            <div className="mt-4 text-center text-sm text-slate-400">
+              Belum daftar?{" "}
+              <a
+                href="/signup"
+                className="text-white hover:underline font-semibold"
+              >
+                Daftar di sini
+              </a>
             </div>
           </form>
         </div>

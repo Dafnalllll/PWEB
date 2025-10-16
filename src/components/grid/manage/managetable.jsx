@@ -29,7 +29,7 @@ const ManageTable = ({ users }) => {
         <tbody>
           {users && users.length > 0 ? (
             users.map((user, idx) => (
-              <tr key={user.id} className="hover:bg-gray-100 transition-colors cursor-pointer">
+              <tr key={user.id} className="hover:bg-gray-100 transition-colors">
                 <td className="px-6 py-4 text-sm text-slate-700 font-semibold">
                   {idx + 1}
                 </td>

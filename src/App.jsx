@@ -12,6 +12,7 @@ import Category from "./pages/user/category";
 import Borrow from "./pages/user/borrow";
 import Return from "./pages/user/return";
 import Manage from "./pages/user/manage";
+import DashboardAdmin from "./pages/admin/dashboard";
 import Login from "./pages/auth/login";
 import SignUp from "./pages/auth/signup";
 function App() {
@@ -25,6 +26,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Admin routes */}
+        <Route path="/admin" element={<DashboardAdmin />} />
         {/* User routes */}
         <Route path="/" element={<Dashboard />} />
         <Route path="/data" element={<Data />} />
