@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Sidebar from "../../components/sidebar/sidebar";
-import CategoryGrid from "../../components/grid/category/categorygrid";
+import CategoryGrid from "../../components/grid/user/category/categorygrid";
 
 export const Category = () => {
   useEffect(() => {

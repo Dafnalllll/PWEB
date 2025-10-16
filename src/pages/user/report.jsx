@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Sidebar from "../../components/sidebar/sidebar";
-import ReportGrid from "../../components/grid/report/reportgrid";
+import ReportGrid from "../../components/grid/user/report/reportgrid";
 export const Report = () => {
   useEffect(() => {
     document.title = "Report || InventoShoot";

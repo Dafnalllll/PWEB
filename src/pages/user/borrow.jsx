@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Sidebar from "../../components/sidebar/sidebar";
-import BorrowGrid from "../../components/grid/borrow/borrowgrid";
+import BorrowGrid from "../../components/grid/user/borrow/borrowgrid";
 export const Borrow = () => {
   useEffect(() => {
     document.title = "Borrow || InventoShoot";

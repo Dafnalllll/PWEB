@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Sidebar from "../../components/sidebar/sidebar";
-import DashboardGrid from "../../components/grid/dashboard/dashboardgrid";
+import DashboardGrid from "../../components/grid/user/dashboard/dashboardgrid";
 export const Dashboard = () => {
   useEffect(() => {
     document.title = "InventoShoot";

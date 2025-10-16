@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Sidebar from "../../components/sidebar/sidebar";
-import ReturnGrid from "../../components/grid/return/returngrid";
+import ReturnGrid from "../../components/grid/user/return/returngrid";
 export const Return = () => {
   useEffect(() => {
     document.title = "Return || InventoShoot";

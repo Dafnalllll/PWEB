@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Sidebar from "../../components/sidebar/sidebar";
-import ManageTable from "../../components/grid/manage/managetable";
-import ManageGrid from "../../components/grid/manage/managegrid";
+import ManageGrid from "../../components/grid/user/manage/managegrid";
 export const Manage = () => {
   useEffect(() => {
     document.title = "Manage || InventoShoot";

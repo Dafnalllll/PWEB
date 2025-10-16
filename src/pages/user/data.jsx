@@ -4,11 +4,11 @@ import {
   ItemsGrid,
   CategoriesGrid,
   DataHeader,
-} from "../../components/grid/data/datagrid";
+} from "../../components/grid/user/data/datagrid";
 import {
   sampleItems,
   sampleCategories,
-} from "../../components/grid/data/js/sampledataData";
+} from "../../components/grid/user/data/js/sampledataData";
 
 export const Data = () => {
   useEffect(() => {

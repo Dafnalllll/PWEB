@@ -1,7 +1,7 @@
 import React from "react";
 import TableHeader from "./TableHeader";
 import { formatDate } from "./js/utils";
-import { IconDetail } from "../../icon/dashboardicon";
+import { IconDetail } from "../../../icon/dashboardicon";
 
 export default function HistoryTable({ items = [], onView }) {
   return (

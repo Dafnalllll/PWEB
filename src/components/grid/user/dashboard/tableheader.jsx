@@ -1,6 +1,5 @@
 import React from "react";
-import Borrow from "../../../assets/sidebar/borrow.webp";
-import History from "../../../assets/dashboard/history.webp";
+import History from "../../../../assets/dashboard/history.webp";
 export default function TableHeader({ title, subtitle, onAdd, onExport }) {
   return (
     <div className="w-full flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
