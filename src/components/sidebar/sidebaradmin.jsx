@@ -1,37 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import InventoShoot from "../../assets/inventoshoot.webp";
 import {
   DashboardIcon,
   DataIcon,
-  StatusIcon,
-  CategoryIcon,
-  BorrowIcon,
-  ReturnIcon,
+  AddIcon,
   ManageIcon,
-  ReportIcon,
 } from "../icon/sidebaricon";
-import InventoShoot from "../../assets/inventoshoot.webp";
-export default function Sidebar({ items = null }) {
+
+export default function SidebarAdmin({ items = null }) {
   const navigate = useNavigate();
   const [active, setActive] = useState("dashboard");
   const location = useLocation();
-
   const navItems = items ?? [
-    { key: "dashboard", label: "Dashboard", icon: DashboardIcon, badge: null },
-    { key: "data", label: "Data", icon: DataIcon, badge: null },
-    { key: "status", label: "Status", icon: StatusIcon, badge: null },
-    { key: "category", label: "Category", icon: CategoryIcon, badge: null },
-    { key: "borrow", label: "Borrow", icon: BorrowIcon, badge: null },
-    { key: "return", label: "Return", icon: ReturnIcon, badge: null },
-    { key: "report", label: "Report", icon: ReportIcon, badge: null },
+    { key: "admin", label: "Dashboard", icon: DashboardIcon, badge: null },
+    { key: "dataadmin", label: "Data", icon: DataIcon, badge: null },
+    { key: "add", label: "Add Item", icon: AddIcon, badge: null },
+    { key: "manage", label: "Manage", icon: ManageIcon, badge: null },
   ];
-
   useEffect(() => {
-    // ambil dari pathname, contoh "/" -> dashboard, "/data" -> data
     const p = location.pathname.replace(/^\/+/g, "");
     setActive(p === "" ? "dashboard" : p);
   }, [location]);
-
   return (
     <aside
       className="flex flex-col h-auto w-64 p-3 backdrop-blur-md bg-white/20 border-r border-white/30 shadow-lg rounded-r-xl"

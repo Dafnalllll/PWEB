@@ -7,6 +7,15 @@ import Borrow from "../../assets/sidebar/borrow.webp";
 import Return from "../../assets/sidebar/return.webp";
 import Manage from "../../assets/sidebar/management.webp";
 import Report from "../../assets/sidebar/report.webp";
+import Add from "../../assets/sidebar/add.webp";
+
+export function AddIcon() {
+  return (
+    <div className="w-5 h-5 overflow-hidden flex items-center justify-center">
+      <img src={Add} alt="add" className="w-full h-full object-cover" />
+    </div>
+  );
+}
 
 export function DashboardIcon() {
   return (

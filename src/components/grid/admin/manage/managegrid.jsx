@@ -3,19 +3,34 @@ import { sampleUsers } from "./js/sampledataManage";
 import ManageTable from "./managetable";
 
 const ManageGrid = () => {
+  const [users, setUsers] = useState(sampleUsers);
   const [q, setQ] = useState("");
 
   const filteredUsers = useMemo(() => {
     const term = (q || "").trim().toLowerCase();
-    if (!term) return sampleUsers;
-    return sampleUsers.filter(
+    if (!term) return users;
+    return users.filter(
       (user) =>
         user.nama.toLowerCase().includes(term) ||
         user.username.toLowerCase().includes(term) ||
         user.email.toLowerCase().includes(term) ||
         user.role.toLowerCase().includes(term)
     );
-  }, [q]);
+  }, [q, users]);
+
+  // Handler untuk ganti role
+  const handleRoleChange = (id, newRole) => {
+    setUsers((prev) =>
+      prev.map((user) => (user.id === id ? { ...user, role: newRole } : user))
+    );
+  };
+
+  // Handler untuk ganti status
+  const handleStatusChange = (id, isAktif) => {
+    setUsers((prev) =>
+      prev.map((user) => (user.id === id ? { ...user, aktif: isAktif } : user))
+    );
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
@@ -45,7 +60,11 @@ const ManageGrid = () => {
         </div>
       </div>
       {/* Table */}
-      <ManageTable users={filteredUsers} />
+      <ManageTable
+        users={filteredUsers}
+        onRoleChange={handleRoleChange}
+        onStatusChange={handleStatusChange}
+      />
     </div>
   );
 };

@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const ManageTable = ({ users }) => {
+const roleOptions = ["Admin", "User"];
+const statusOptions = ["Aktif", "Nonaktif"];
+
+const ManageTable = ({ users, onRoleChange, onStatusChange }) => {
+  const [editId, setEditId] = useState(null);
+
+  // Reset editId jika user yang sedang diedit tidak ada di users (misal setelah filter)
+  useEffect(() => {
+    if (editId !== null && !users.some((u) => u.id === editId)) {
+      setEditId(null);
+    }
+  }, [users, editId]);
+
   return (
     <div className="overflow-x-auto bg-white rounded-2xl shadow-xl border border-slate-100">
       <table className="min-w-full divide-y divide-slate-200">
-        <thead className="bg-gray-100">
+        <thead className="bg-slate-50">
           <tr>
             <th className="px-6 py-4 text-left text-xs font-extrabold text-slate-700 uppercase tracking-wider">
               No
@@ -29,7 +41,10 @@ const ManageTable = ({ users }) => {
         <tbody>
           {users && users.length > 0 ? (
             users.map((user, idx) => (
-              <tr key={user.id} className="hover:bg-gray-100 transition-colors">
+              <tr
+                key={user.id}
+                className="bg-white hover:bg-slate-50 transition border-b last:border-b-0 border-slate-100"
+              >
                 <td className="px-6 py-4 text-sm text-slate-700 font-semibold">
                   {idx + 1}
                 </td>
@@ -43,28 +58,40 @@ const ManageTable = ({ users }) => {
                   {user.email}
                 </td>
                 <td className="px-6 py-4 text-sm">
-                  <span
-                    className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
-                      user.role === "Admin"
-                        ? "bg-blue-500 text-white"
-                        : user.role === "Operator"
-                        ? "bg-yellow-400 text-slate-900"
-                        : "bg-slate-300 text-slate-700"
-                    }`}
+                  <select
+                    value={user.role}
+                    onChange={(e) =>
+                      onRoleChange && onRoleChange(user.id, e.target.value)
+                    }
+                    className="px-5 py-1 rounded-full text-xs font-semibold border border-gray-500 focus:outline-none bg-white text-blue-700 transition"
+                    style={{ minWidth: 100 }}
                   >
-                    {user.role}
-                  </span>
+                    {roleOptions.map((role) => (
+                      <option key={role} value={role}>
+                        {role}
+                      </option>
+                    ))}
+                  </select>
                 </td>
                 <td className="px-6 py-4 text-sm">
-                  <span
-                    className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
-                      user.aktif
-                        ? "bg-emerald-100 text-emerald-700"
-                        : "bg-red-100 text-red-700"
-                    }`}
+                  <select
+                    value={user.aktif ? "Aktif" : "Nonaktif"}
+                    onChange={(e) =>
+                      onStatusChange &&
+                      onStatusChange(user.id, e.target.value === "Aktif")
+                    }
+                    className={`px-5 py-1 rounded-full text-xs font-semibold border border-gray-500 focus:outline-none bg-white transition`}
+                    style={{
+                      minWidth: 100,
+                      color: user.aktif ? "#059669" : "#dc2626",
+                    }}
                   >
-                    {user.aktif ? "Aktif" : "Nonaktif"}
-                  </span>
+                    {statusOptions.map((status) => (
+                      <option key={status} value={status}>
+                        {status}
+                      </option>
+                    ))}
+                  </select>
                 </td>
               </tr>
             ))
