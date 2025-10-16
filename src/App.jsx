@@ -1,21 +1,22 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import Dashboard from "./pages/dashboard";
+import Dashboard from "./pages/user/dashboard";
 import NotFound from "./pages/notfound";
-import Report from "./pages/report";
-import Data from "./pages/data";
-import Status from "./pages/status";
-import Category from "./pages/category";
-import Borrow from "./pages/borrow";
-import Return from "./pages/return";
-import Manage from "./pages/manage";
+import Report from "./pages/user/report";
+import Data from "./pages/user/data";
+import Status from "./pages/user/status";
+import Category from "./pages/user/category";
+import Borrow from "./pages/user/borrow";
+import Return from "./pages/user/return";
+import Manage from "./pages/user/manage";
 import Login from "./pages/auth/login";
 import SignUp from "./pages/auth/signup";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* User routes */}
         <Route path="/" element={<Dashboard />} />
         <Route path="/data" element={<Data />} />
         <Route path="/report" element={<Report />} />
