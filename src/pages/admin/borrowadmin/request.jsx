@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import SidebarAdmin from "../../../components/sidebar/sidebaradmin";
+import BorrowRequestTable from "../../../components/grid/admin/borrow/borrowrequesttable";
 export const Request = () => {
   useEffect(() => {
     document.title = "Borrow Request || InventoShoot";
@@ -10,6 +11,7 @@ export const Request = () => {
 
       <main className="flex-1 p-6 lg:p-10">
         <h1 className="text-2xl font-bold mb-4">Request</h1>
+        <BorrowRequestTable />
       </main>
     </div>
   );

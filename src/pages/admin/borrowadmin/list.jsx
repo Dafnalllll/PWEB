@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import SidebarAdmin from "../../../components/sidebar/sidebaradmin";
+import BorrowListTable from "../../../components/grid/admin/borrow/borrowlisttable";
 export const List = () => {
   useEffect(() => {
     document.title = "Borrow List || InventoShoot";
@@ -10,6 +11,7 @@ export const List = () => {
 
       <main className="flex-1 p-6 lg:p-10">
         <h1 className="text-2xl font-bold mb-4">List</h1>
+        <BorrowListTable />
       </main>
     </div>
   );
