@@ -92,7 +92,7 @@ export default function StatisticChart() {
   return (
     <div
       className="p-6 bg-white rounded-xl shadow max-w-6xl mx-auto"
-      style={{ height: 500 }}
+      style={{ height: 535 }}
     >
       <Bar data={data} options={options} height={450} />
     </div>
