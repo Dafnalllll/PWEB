@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import SidebarAdmin from "../../components/sidebar/sidebaradmin";
 import DashboardGrid from "../../components/grid/admin/dashboard/dashboardgrid";
-import StatisticChart from "../../components/grid/admin/dashboard/statisctic";
+import StatisticChart from "../../components/grid/admin/dashboard/statisticdashboard";
 export const Dashboard = () => {
   useEffect(() => {
     document.title = "Admin || InventoShoot";

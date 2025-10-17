@@ -10,7 +10,7 @@ export const Request = () => {
       <SidebarAdmin />
 
       <main className="flex-1 p-6 lg:p-10">
-        <h1 className="text-2xl font-bold mb-4">Request</h1>
+        <h1 className="text-2xl font-bold mb-4">Borrow Request</h1>
         <BorrowRequestTable />
       </main>
     </div>

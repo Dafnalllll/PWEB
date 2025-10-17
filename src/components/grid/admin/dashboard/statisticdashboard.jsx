@@ -50,7 +50,10 @@ const data = {
         "#E9D5FF", // Borrow (ungu)
         "#BAE6FD", // Return (biru)
       ],
-      borderRadius: 8,
+      borderRadius: 12,
+      borderSkipped: false,
+      barPercentage: 0.6,
+      categoryPercentage: 0.5,
     },
   ],
 };
@@ -58,17 +61,40 @@ const data = {
 const options = {
   plugins: {
     legend: { display: false },
+    title: {
+      display: true,
+      text: "Grafik Statistik",
+      align: "start",
+      font: { size: 20, weight: "bold" },
+      color: "#22223b",
+      padding: { bottom: 24 },
+    },
+  },
+  maintainAspectRatio: false,
+  animation: {
+    duration: 1200,
+    easing: "easeOutQuart",
   },
   scales: {
-    y: { beginAtZero: true, ticks: { stepSize: 1 } },
+    x: {
+      grid: { display: false },
+      ticks: { font: { size: 16 } },
+    },
+    y: {
+      beginAtZero: true,
+      ticks: { stepSize: 1, font: { size: 16 } },
+      grid: { color: "#f3f4f6" },
+    },
   },
 };
 
 export default function StatisticChart() {
   return (
-    <div className="p-4 bg-white rounded shadow">
-      <h2 className="text-lg font-semibold mb-4">Grafik Statistik</h2>
-      <Bar data={data} options={options} />
+    <div
+      className="p-6 bg-white rounded-xl shadow max-w-6xl mx-auto"
+      style={{ height: 500 }}
+    >
+      <Bar data={data} options={options} height={450} />
     </div>
   );
 }

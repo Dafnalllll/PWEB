@@ -10,7 +10,7 @@ export const List = () => {
       <SidebarAdmin />
 
       <main className="flex-1 p-6 lg:p-10">
-        <h1 className="text-2xl font-bold mb-4">List</h1>
+        <h1 className="text-2xl font-bold mb-4">Borrow List</h1>
         <BorrowListTable />
       </main>
     </div>
