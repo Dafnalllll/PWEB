@@ -63,7 +63,7 @@ const ManageTable = ({ users, onRoleChange, onStatusChange }) => {
                     onChange={(e) =>
                       onRoleChange && onRoleChange(user.id, e.target.value)
                     }
-                    className="px-5 py-1 rounded-full text-xs font-semibold border border-gray-500 focus:outline-none bg-white text-blue-700 transition"
+                    className="px-5 py-1 rounded-full text-xs font-semibold border border-gray-500 focus:outline-none bg-white text-blue-700 transition cursor-pointer"
                     style={{ minWidth: 100 }}
                   >
                     {roleOptions.map((role) => (
@@ -80,7 +80,7 @@ const ManageTable = ({ users, onRoleChange, onStatusChange }) => {
                       onStatusChange &&
                       onStatusChange(user.id, e.target.value === "Aktif")
                     }
-                    className={`px-5 py-1 rounded-full text-xs font-semibold border border-gray-500 focus:outline-none bg-white transition`}
+                    className={`px-5 py-1 rounded-full text-xs font-semibold border border-gray-500 focus:outline-none bg-white transition cursor-pointer`}
                     style={{
                       minWidth: 100,
                       color: user.aktif ? "#059669" : "#dc2626",

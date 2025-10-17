@@ -8,6 +8,33 @@ import Return from "../../assets/sidebar/return.webp";
 import Manage from "../../assets/sidebar/management.webp";
 import Report from "../../assets/sidebar/report.webp";
 import Add from "../../assets/sidebar/add.webp";
+import History from "../../assets/sidebar/history.webp";
+import Request from "../../assets/sidebar/request.webp";
+import List from "../../assets/sidebar/list.webp";
+
+export function ListIcon() {
+  return (
+    <div className="w-5 h-5 overflow-hidden flex items-center justify-center">
+      <img src={List} alt="list" className="w-full h-full object-cover" />
+    </div>
+  );
+}
+
+export function RequestIcon() {
+  return (
+    <div className="w-5 h-5 overflow-hidden flex items-center justify-center">
+      <img src={Request} alt="request" className="w-full h-full object-cover" />
+    </div>
+  );
+}
+
+export function HistoryIcon() {
+  return (
+    <div className="w-5 h-5 overflow-hidden flex items-center justify-center">
+      <img src={History} alt="history" className="w-full h-full object-cover" />
+    </div>
+  );
+}
 
 export function AddIcon() {
   return (
