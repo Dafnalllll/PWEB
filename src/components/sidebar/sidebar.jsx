@@ -7,7 +7,6 @@ import {
   CategoryIcon,
   BorrowIcon,
   ReturnIcon,
-  ManageIcon,
   ReportIcon,
 } from "../icon/sidebaricon";
 import InventoShoot from "../../assets/inventoshoot.webp";

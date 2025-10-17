@@ -1,12 +1,14 @@
 import React from "react";
 import SidebarAdmin from "../../../components/sidebar/sidebaradmin";
+import DataAddForm from "../../../components/grid/admin/dataadmin/dataaddform";
 export const DataAddAdmin = () => {
   return (
     <div className="min-h-screen flex bg-slate-50">
       <SidebarAdmin />
 
       <main className="flex-1 p-6 lg:p-10">
-        <h1 className="text-2xl font-bold mb-4">Data Add Admin</h1>
+        <h1 className="text-2xl font-bold mb-4">Add Data</h1>
+        <DataAddForm />
       </main>
     </div>
   );

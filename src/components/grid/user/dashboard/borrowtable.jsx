@@ -1,7 +1,7 @@
 import React from "react";
 import TableHeader from "./TableHeader";
 import { formatDate } from "./js/utils";
-import { IconDetail } from "../../../icon/dashboardicon";
+import { DetailIcon } from "../../../icon/dashboardicon";
 
 function statusClass(status) {
   switch ((status || "").toLowerCase()) {
@@ -95,7 +95,7 @@ export default function BorrowedTable({ items = [], onDetail }) {
                       className="inline-flex items-center gap-2 px-2 py-1 rounded-md bg-white border border-slate-100 text-slate-700 hover:shadow-sm transition-all hover:scale-105 cursor-pointer"
                       title="Detail"
                     >
-                      <IconDetail />
+                      <DetailIcon />
                       <span className="hidden sm:inline text-xs">Detail</span>
                     </button>
                   </div>
