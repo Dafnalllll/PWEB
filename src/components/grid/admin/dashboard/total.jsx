@@ -1,5 +1,5 @@
 import React from "react";
-import { TotalIcon } from "../../../icon/sidebaricon";
+import { TotalIcon } from "../../../icon/dashboardicon";
 
 const items = [
   { id: 1, name: "Laptop", category: "Elektronik" },

@@ -1,5 +1,5 @@
 import React from "react";
-import { UserIcon } from "../../../icon/sidebaricon";
+import { UserIcon } from "../../../icon/dashboardicon";
 
 const users = [
   { id: 1, name: "Admin", role: "Administrator" },
