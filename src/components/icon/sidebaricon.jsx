@@ -11,6 +11,23 @@ import Add from "../../assets/sidebar/add.webp";
 import History from "../../assets/sidebar/history.webp";
 import Request from "../../assets/sidebar/request.webp";
 import List from "../../assets/sidebar/list.webp";
+import Total from "../../assets/sidebar/total.webp";
+import User from "../../assets/sidebar/user.webp";
+export function UserIcon() {
+  return (
+    <div className="w-5 h-5 overflow-hidden flex items-center justify-center">
+      <img src={User} alt="user" className="w-full h-full object-cover" />
+    </div>
+  );
+}
+
+export function TotalIcon() {
+  return (
+    <div className="w-5 h-5 overflow-hidden flex items-center justify-center">
+      <img src={Total} alt="total" className="w-full h-full object-cover" />
+    </div>
+  );
+}
 
 export function ListIcon() {
   return (
@@ -88,11 +105,7 @@ export function CategoryIcon() {
 export function BorrowIcon() {
   return (
     <div className="w-5 h-5 overflow-hidden flex items-center justify-center">
-      <img
-        src={Borrow}
-        alt="borrow"
-        className="w-full h-full object-cover"
-      />
+      <img src={Borrow} alt="borrow" className="w-full h-full object-cover" />
     </div>
   );
 }
@@ -100,11 +113,7 @@ export function BorrowIcon() {
 export function ReturnIcon() {
   return (
     <div className="w-5 h-5 overflow-hidden flex items-center justify-center">
-      <img
-        src={Return}
-        alt="return"
-        className="w-full h-full object-cover"
-      />
+      <img src={Return} alt="return" className="w-full h-full object-cover" />
     </div>
   );
 }
@@ -112,11 +121,7 @@ export function ReturnIcon() {
 export function ManageIcon() {
   return (
     <div className="w-5 h-5 overflow-hidden flex items-center justify-center">
-      <img
-        src={Manage}
-        alt="manage"
-        className="w-full h-full object-cover"
-      />
+      <img src={Manage} alt="manage" className="w-full h-full object-cover" />
     </div>
   );
 }
@@ -124,12 +129,7 @@ export function ManageIcon() {
 export function ReportIcon() {
   return (
     <div className="w-5 h-5 overflow-hidden flex items-center justify-center">
-      <img
-        src={Report}
-        alt="report"
-        className="w-full h-full object-cover"
-      />
+      <img src={Report} alt="report" className="w-full h-full object-cover" />
     </div>
   );
 }
-
