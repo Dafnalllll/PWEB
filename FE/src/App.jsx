@@ -15,16 +15,15 @@ import Manage from "./pages/admin/manage";
 import DashboardAdmin from "./pages/admin/dashboard";
 import DataAdmin from "./pages/admin/dataadmin";
 import DataAddAdmin from "./pages/admin/dataadmin/dataaddadmin";
-{
-  /* Borrow Admin */
-}
+
+/* Borrow Admin */
 import BorrowAdmin from "./pages/admin/borrowadmin";
 import BorrowList from "./pages/admin/borrowadmin/list";
 import BorrowRequest from "./pages/admin/borrowadmin/request";
 import BorrowHistory from "./pages/admin/borrowadmin/history";
-{
-  /* Return Admin */
-}
+
+  
+/* Return Admin */
 import Returnadmin from "./pages/admin/returnadmin";
 import ReturnList from "./pages/admin/returnadmin/list";
 import ReturnRequest from "./pages/admin/returnadmin/request";

@@ -6,7 +6,7 @@ const statusColor = {
   red: "bg-red-100 text-red-700",
 };
 
-const BorrowTable = ({ data }) => {
+const BorrowTable = ({ data, onPinjam }) => {
   return (
     <div className="w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden ml-[2rem] mt-[2rem]">
       <table className="w-full border-collapse">
@@ -56,7 +56,10 @@ const BorrowTable = ({ data }) => {
               <td className="py-3 px-3 text-slate-700 ">{item.stok}</td>
               <td className="py-3 px-3 text-start">
                 {item.stok > 0 ? (
-                  <button className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm hover:shadow-md transition-all hover:scale-105 cursor-pointer">
+                  <button
+                    className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm hover:shadow-md transition-all hover:scale-105 cursor-pointer"
+                    onClick={() => onPinjam(item)}
+                  >
                     Pinjam
                   </button>
                 ) : (

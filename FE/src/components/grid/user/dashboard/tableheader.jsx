@@ -1,6 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import History from "../../../../assets/dashboard/history.webp";
+
 export default function TableHeader({ title, subtitle, onAdd, onExport }) {
+  const navigate = useNavigate();
+
+  const handleAddClick = () => {
+    if (onAdd) {
+      onAdd();
+    }
+    navigate("/borrow");
+  };
+
   return (
     <div className="w-full flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
       <div className="flex items-start sm:items-center gap-3">
@@ -59,7 +70,7 @@ export default function TableHeader({ title, subtitle, onAdd, onExport }) {
         </button>
 
         <button
-          onClick={onAdd}
+          onClick={handleAddClick}
           aria-label="Tambah"
           className="inline-flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-sky-600 to-sky-500 text-white rounded-lg shadow-sm hover:opacity-95 transition-all hover:scale-105 cursor-pointer"
         >

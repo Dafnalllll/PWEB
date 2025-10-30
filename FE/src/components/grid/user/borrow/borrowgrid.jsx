@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from "react";
 import BorrowTable from "./borrowtable";
 import { sampleBorrow } from "./js/sampledataBorrow";
+import BorrowFormModal from "../form/borrowform"; // Pastikan untuk mengimpor komponen BorrowFormModal
+
 export const BorrowCaption = () => (
   <div className="mb-[2rem] ">
     <h1 className="text-2xl font-semibold text-slate-900">Borrow</h1>
@@ -30,6 +32,8 @@ export const BorrowFilter = ({ q, setQ }) => (
 
 export const BorrowGrid = () => {
   const [q, setQ] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const filteredBorrow = useMemo(() => {
     return sampleBorrow.filter(
@@ -38,6 +42,27 @@ export const BorrowGrid = () => {
         item.kategori.toLowerCase().includes(q.toLowerCase())
     );
   }, [q]);
+
+  const handlePinjamClick = (item) => {
+    setSelectedItem({
+      ...item,
+      name: item.barang,
+      stock: item.stok,
+    });
+    setIsModalOpen(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+    setSelectedItem(null);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // proses pengajuan pinjam
+    setIsModalOpen(false);
+    setSelectedItem(null);
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-8">
@@ -48,7 +73,15 @@ export const BorrowGrid = () => {
       </div>
 
       {/* Table */}
-      <BorrowTable data={filteredBorrow} />
+      <BorrowTable data={filteredBorrow} onPinjam={handlePinjamClick} />
+
+      {/* Modal Form Peminjaman */}
+      <BorrowFormModal
+        isModalOpen={isModalOpen}
+        selectedItem={selectedItem}
+        handleSubmit={handleSubmit}
+        handleCancel={handleCancel}
+      />
     </div>
   );
 };
