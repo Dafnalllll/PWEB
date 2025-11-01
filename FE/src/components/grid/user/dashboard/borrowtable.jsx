@@ -17,11 +17,16 @@ function statusClass(status) {
 }
 
 export default function BorrowedTable({ items = [], onDetail }) {
+  const handleAdd = () => {};
+
   return (
     <div className="bg-white backdrop-blur-sm border border-slate-100 rounded-2xl p-4 shadow-lg">
       <TableHeader
-        title="Barang Dipinjam"
-        subtitle={`Total: ${items.length}`}
+        title="Borrow"
+        subtitle="Data barang yang dipinjam"
+        showAdd={true}
+        showExport={false}
+        onAdd={handleAdd}
       />
 
       <div className="overflow-x-auto">
@@ -109,10 +114,10 @@ export default function BorrowedTable({ items = [], onDetail }) {
                   colSpan="9"
                   className="px-6 py-12 text-center text-slate-500"
                 >
-                  <div className="mx-auto max-w-xs">
-                    <div className="mb-3 flex items-center justify-center w-12 h-12 rounded-lg bg-slate-100 text-slate-500">
+                  <div className="mx-auto max-w-xs flex flex-col items-center">
+                    <div className="mb-3 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-sky-100 to-slate-100 shadow-lg">
                       <svg
-                        className="w-6 h-6"
+                        className="w-8 h-8 text-sky-400"
                         viewBox="0 0 24 24"
                         fill="none"
                         aria-hidden="true"
@@ -135,14 +140,21 @@ export default function BorrowedTable({ items = [], onDetail }) {
                           strokeWidth="1.5"
                           strokeLinecap="round"
                         />
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="1"
+                          opacity="0.1"
+                        />
                       </svg>
                     </div>
-                    <div className="text-sm font-medium">
-                      Tidak ada barang yang sedang dipinjam
+                    <div className="text-base font-semibold text-slate-700">
+                      Tidak ada barang ditemukan
                     </div>
                     <div className="text-xs text-slate-400 mt-2">
-                      Semua peminjaman saat ini sudah dikembalikan atau belum
-                      ada peminjaman.
+                      Riwayat akan muncul setelah ada pengembalian barang.
                     </div>
                   </div>
                 </td>

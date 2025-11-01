@@ -2,13 +2,27 @@ import React from "react";
 import TableHeader from "./TableHeader";
 import { formatDate } from "./js/utils";
 import { DetailIcon } from "../../../icon/dashboardicon";
+import * as XLSX from "xlsx";
 
 export default function HistoryTable({ items = [], onView }) {
+  const handleExport = () => {
+    // Konversi data ke worksheet
+    const ws = XLSX.utils.json_to_sheet(items);
+    // Buat workbook
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "History");
+    // Export ke file Excel
+    XLSX.writeFile(wb, "history-peminjaman.xlsx");
+  };
+
   return (
     <div className="bg-white backdrop-blur-sm border border-slate-100 rounded-2xl p-4 shadow-lg">
       <TableHeader
-        title="Riwayat Peminjaman"
-        subtitle={`Total: ${items.length}`}
+        title="History"
+        subtitle="Riwayat peminjaman barang"
+        showAdd={false}
+        showExport={true}
+        onExport={handleExport}
       />
 
       <div className="overflow-x-auto">
@@ -65,7 +79,13 @@ export default function HistoryTable({ items = [], onView }) {
                 </td>
 
                 <td className="px-4 py-4 align-top w-36">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700">
+                  <span
+                    className={
+                      it.condition === "Baik"
+                        ? "px-2 py-1 rounded bg-green-100 text-green-700 font-semibold"
+                        : "px-2 py-1 rounded bg-red-100 text-red-700 font-semibold"
+                    }
+                  >
                     {it.condition}
                   </span>
                 </td>
@@ -89,10 +109,10 @@ export default function HistoryTable({ items = [], onView }) {
                   colSpan="9"
                   className="px-6 py-12 text-center text-slate-500"
                 >
-                  <div className="mx-auto max-w-xs">
-                    <div className="mb-3 flex items-center justify-center w-12 h-12 rounded-lg bg-slate-100 text-slate-500">
+                  <div className="mx-auto max-w-xs flex flex-col items-center">
+                    <div className="mb-3 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-sky-100 to-slate-100 shadow-lg">
                       <svg
-                        className="w-6 h-6"
+                        className="w-8 h-8 text-sky-400"
                         viewBox="0 0 24 24"
                         fill="none"
                         aria-hidden="true"
@@ -115,13 +135,21 @@ export default function HistoryTable({ items = [], onView }) {
                           strokeWidth="1.5"
                           strokeLinecap="round"
                         />
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="1"
+                          opacity="0.1"
+                        />
                       </svg>
                     </div>
-                    <div className="text-sm font-medium">
-                      Belum ada riwayat peminjaman
+                    <div className="text-base font-semibold text-slate-700">
+                      Tidak ada barang ditemukan
                     </div>
                     <div className="text-xs text-slate-400 mt-2">
-                      Riwayat akan muncul setelah ada pengembalian.
+                      Riwayat akan muncul setelah ada pengembalian barang.
                     </div>
                   </div>
                 </td>

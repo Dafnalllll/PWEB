@@ -1,6 +1,8 @@
 import React, { useMemo, useState } from "react";
 import BorrowedTable from "../dashboard/borrowtable";
 import HistoryTable from "../dashboard/historyTable";
+import DetailFormModal from "../form/detailform";
+import ViewHistoryFormModal from "../form/viewhistoryform"; // <--- Tambahkan ini
 import { sampleBorrowed, sampleHistory } from "./js/sampledata";
 
 export default function DashboardGrid({
@@ -8,6 +10,11 @@ export default function DashboardGrid({
   history = sampleHistory,
 }) {
   const [q, setQ] = useState("");
+  const [isDetailOpen, setIsDetailOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+  const [selectedHistory, setSelectedHistory] = useState(null);
+
   const filteredBorrowed = useMemo(
     () =>
       borrowed.filter(
@@ -30,9 +37,23 @@ export default function DashboardGrid({
   );
 
   // handlers
-  const handleDetail = (item) => console.log("detail", item);
+  const handleDetail = (item) => {
+    setSelectedItem(item);
+    setIsDetailOpen(true);
+  };
   const handleReturn = (item) => console.log("return", item);
-  const handleView = (item) => console.log("view", item);
+  const handleView = (item) => {
+    setSelectedHistory(item);
+    setIsHistoryOpen(true);
+  };
+  const handleCloseDetail = () => {
+    setIsDetailOpen(false);
+    setSelectedItem(null);
+  };
+  const handleCloseHistory = () => {
+    setIsHistoryOpen(false);
+    setSelectedHistory(null);
+  };
 
   return (
     <div className="p-6 lg:p-10">
@@ -100,6 +121,18 @@ export default function DashboardGrid({
           />
           <HistoryTable items={filteredHistory} onView={handleView} />
         </div>
+        {/* Modal detail */}
+        <DetailFormModal
+          isOpen={isDetailOpen}
+          item={selectedItem}
+          onClose={handleCloseDetail}
+        />
+        {/* Modal view history */}
+        <ViewHistoryFormModal
+          isOpen={isHistoryOpen}
+          item={selectedHistory}
+          onClose={handleCloseHistory}
+        />
       </div>
     </div>
   );

@@ -31,6 +31,7 @@ export const sampleHistory = [
     borrowedAt: "2025-08-10",
     returnedAt: "2025-08-15",
     condition: "Baik",
+    conditionColor: "green", // hijau untuk Baik
   },
   {
     id: "H-102",
@@ -40,6 +41,7 @@ export const sampleHistory = [
     qty: 2,
     borrowedAt: "2025-09-01",
     returnedAt: "2025-09-03",
-    condition: "Baik",
+    condition: "Rusak",
+    conditionColor: "red", // merah untuk Rusak
   },
 ];

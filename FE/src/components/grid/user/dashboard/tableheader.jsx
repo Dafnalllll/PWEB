@@ -2,7 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import History from "../../../../assets/dashboard/history.webp";
 
-export default function TableHeader({ title, subtitle, onAdd, onExport }) {
+export default function TableHeader({
+  title,
+  subtitle,
+  showAdd = false,
+  showExport = false,
+  onAdd,
+  onExport,
+}) {
   const navigate = useNavigate();
 
   const handleAddClick = () => {
@@ -32,72 +39,76 @@ export default function TableHeader({ title, subtitle, onAdd, onExport }) {
       </div>
 
       <div className="flex items-center gap-2">
-        <button
-          onClick={onExport}
-          aria-label="Export"
-          className="inline-flex items-center gap-2 px-3 py-2 bg-white/70 border border-slate-100 rounded-lg text-sm text-slate-700 hover:shadow-sm transition-all hover:scale-105 cursor-pointer"
-        >
-          <svg
-            className="w-4 h-4"
-            viewBox="0 0 24 24"
-            fill="none"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
+        {showExport && (
+          <button
+            onClick={onExport}
+            aria-label="Export"
+            className="inline-flex items-center gap-2 px-3 py-2 bg-white/70 border border-slate-100 rounded-lg text-sm text-slate-700 hover:shadow-sm transition-all hover:scale-105 cursor-pointer"
           >
-            <path
-              d="M12 3v12"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M8 7l4-4 4 4"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M21 21H3"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span className="hidden sm:inline">Export</span>
-        </button>
+            <svg
+              className="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 3v12"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M8 7l4-4 4 4"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M21 21H3"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span className="hidden sm:inline">Export</span>
+          </button>
+        )}
 
-        <button
-          onClick={handleAddClick}
-          aria-label="Tambah"
-          className="inline-flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-sky-600 to-sky-500 text-white rounded-lg shadow-sm hover:opacity-95 transition-all hover:scale-105 cursor-pointer"
-        >
-          <svg
-            className="w-4 h-4"
-            viewBox="0 0 24 24"
-            fill="none"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
+        {showAdd && (
+          <button
+            onClick={handleAddClick}
+            aria-label="Tambah"
+            className="inline-flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-sky-600 to-sky-500 text-white rounded-lg shadow-sm hover:opacity-95 transition-all hover:scale-105 cursor-pointer"
           >
-            <path
-              d="M12 5v14"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M5 12h14"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span className="hidden sm:inline cursor-pointer">Tambah</span>
-        </button>
+            <svg
+              className="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 5v14"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M5 12h14"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span className="hidden sm:inline cursor-pointer">Tambah</span>
+          </button>
+        )}
       </div>
     </div>
   );

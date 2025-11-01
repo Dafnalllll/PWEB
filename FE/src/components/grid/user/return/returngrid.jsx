@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { sampleReturn } from "./js/sampledataReturn";
 import ReturnTable from "./returntable";
+import ReturnFormModal from "../form/returnform"; // import modal
 
 const ReturnCaption = () => (
   <div className="mt-14 ml-[4rem]">
@@ -31,6 +32,9 @@ const ReturnFilter = ({ q, setQ }) => (
 
 const ReturnGrid = () => {
   const [q, setQ] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
   const filteredReturn = useMemo(() => {
     return sampleReturn.filter(
       (item) =>
@@ -38,6 +42,28 @@ const ReturnGrid = () => {
         item.kondisi?.toLowerCase().includes(q.toLowerCase())
     );
   }, [q]);
+
+  // Handler untuk tombol Kembalikan
+  const handleKembalikanClick = (item) => {
+    setSelectedItem({
+      ...item,
+      name: item.barang,
+      borrowed: item.jumlah || 1,
+    });
+    setIsModalOpen(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+    setSelectedItem(null);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Proses pengembalian di sini
+    setIsModalOpen(false);
+    setSelectedItem(null);
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-8">
@@ -49,7 +75,13 @@ const ReturnGrid = () => {
         </div>
       </div>
       {/* Table */}
-      <ReturnTable data={filteredReturn} />
+      <ReturnTable data={filteredReturn} onKembalikan={handleKembalikanClick} />
+      <ReturnFormModal
+        isModalOpen={isModalOpen}
+        selectedItem={selectedItem}
+        handleSubmit={handleSubmit}
+        handleCancel={handleCancel}
+      />
     </div>
   );
 };
