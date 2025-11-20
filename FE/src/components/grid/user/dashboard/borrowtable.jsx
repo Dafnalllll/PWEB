@@ -116,37 +116,28 @@ export default function BorrowedTable({ items = [], onDetail }) {
                 >
                   <div className="mx-auto max-w-xs flex flex-col items-center">
                     <div className="mb-3 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-sky-100 to-slate-100 shadow-lg">
+                      {/* Ganti ikon dengan ikon search */}
                       <svg
                         className="w-8 h-8 text-sky-400"
                         viewBox="0 0 24 24"
                         fill="none"
                         aria-hidden="true"
                       >
-                        <path
-                          d="M3 7h18"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                        />
-                        <path
-                          d="M8 7v10a2 2 0 002 2h4a2 2 0 002-2V7"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                        />
-                        <path
-                          d="M12 11v6"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                        />
                         <circle
-                          cx="12"
-                          cy="12"
-                          r="10"
+                          cx="11"
+                          cy="11"
+                          r="7"
                           stroke="currentColor"
-                          strokeWidth="1"
-                          opacity="0.1"
+                          strokeWidth="2"
+                        />
+                        <line
+                          x1="16.5"
+                          y1="16.5"
+                          x2="21"
+                          y2="21"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
                         />
                       </svg>
                     </div>

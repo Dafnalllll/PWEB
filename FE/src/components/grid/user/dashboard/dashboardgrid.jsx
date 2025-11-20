@@ -1,8 +1,10 @@
 import React, { useMemo, useState } from "react";
 import BorrowedTable from "../dashboard/borrowtable";
-import HistoryTable from "../dashboard/historyTable";
+import BorrowGraph from "../dashboard/borrowgraph";
+import HistoryGraph from "../dashboard/historygraph";
+import HistoryTable from "../dashboard/historytable";
 import DetailFormModal from "../form/detailform";
-import ViewHistoryFormModal from "../form/viewhistoryform"; // <--- Tambahkan ini
+import ViewHistoryFormModal from "../form/viewhistoryform";
 import { sampleBorrowed, sampleHistory } from "./js/sampledata";
 
 export default function DashboardGrid({
@@ -121,6 +123,13 @@ export default function DashboardGrid({
           />
           <HistoryTable items={filteredHistory} onView={handleView} />
         </div>
+
+        {/* Grafik: 1 baris, 2 kolom */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <BorrowGraph />
+          <HistoryGraph />
+        </div>
+
         {/* Modal detail */}
         <DetailFormModal
           isOpen={isDetailOpen}
